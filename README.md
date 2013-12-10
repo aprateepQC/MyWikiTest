@@ -161,7 +161,7 @@ NSArray *myUserSegmentMembership = @[@“purchaser.ebook”,@”sharer.onFB”];
 
 Setting the appLabels property has the effect of passing these labels with every method call of the Quantcast SDK.  At any time however, you can add to the labels you’ve assigned using `appLabels` by setting the labels: argument in your Quantcast method call.  
 
-Here is an example that adds the label “sharer.firstShare” in addition to the labels you’ve already assigned (“sharer.onFB”, “purchaser.ebook”) via the `appLabels` property.  This example uses the logEvent:withLabels: method, which you can learn about under [Tracking App Events](#tracking-app-events).
+Here is an example that adds the label “sharer.firstShare” in addition to the labels you’ve already assigned (“sharer.onFB”, “purchaser.ebook”) via the `appLabels` property.  This example uses the `logEvent:withLabels:` method, which you can learn about under [Tracking App Events](#tracking-app-events).
 
 ```objective-c
 NSString *newLabel = @”sharer.firstShare”;
@@ -169,7 +169,7 @@ NSString *theEventStr = @”tweeted”;
 [[QuantcastMeasurement sharedInstance] logEvent:theEventStr withLabels:newLabel]; 
 ```
 
-All labels that are set during the course of an app session will register a visit for that app session, but only labels set via the `appLabels` property will persist across sessions. A session is started when an app is launched, or when it is woken from the background after more than 30 minutes. A session is defined as ended when an app is closed or when it is suspended for more than 30 minutes.  In the example above, the session will register a visit on audience segments: “sharer.onFB”, “purchaser.ebook”, and “sharer.firstShare”. If the app is then suspended for more than 30 minutes, then awakened, our servers will record a new app session.  If no additional calls are made to QuantcastMeasurement, only the segments assigned via the appLabels property, “sharer.onFB” and “purchaser.ebook”, will register a visit for that session.  
+All labels that are set during the course of an app session will register a visit for that app session, but only labels set via the `appLabels` property will persist across sessions. A session is started when an app is launched, or when it is woken from the background after more than 30 minutes. A session is defined as ended when an app is closed or when it is suspended for more than 30 minutes.  In the example above, the session will register a visit on audience segments: “sharer.onFB”, “purchaser.ebook”, and “sharer.firstShare”. If the app is then suspended for more than 30 minutes, then awakened, our servers will record a new app session.  If no additional calls are made to QuantcastMeasurement, only the segments assigned via the `appLabels` property, “sharer.onFB” and “purchaser.ebook”, will register a visit for that session.  
 
 The `labels:` argument of most Quantcast SDK methods is typed to be an `id` pointer. However, it only accepts either a `NSString` object representing a single label, or a `NSArray` object containing one or more `NSString` objects representing a collection of labels to be applied to the event.
 
