@@ -53,7 +53,7 @@ git submodule update --init
 	*	`SystemConfiguration`
 	*	`UIKit`
 
-![Screenshot - Add Frameworks and Libraries](https://raw.github.com/aprateepQC/SDKIntegrationImages/master/image003.png)
+![Screenshot - Add Frameworks and Libraries](https://raw.github.com/aprateepQC/SDKIntegrationImages/master/image002.png)
 
 3.	Make the following iOS framework optional (weak link): 
 	*	`AdSupport`
@@ -88,6 +88,7 @@ If you intend to support iOS 4.3 - 4.6, perform these additional steps. Otherwis
 	```objective-c
 	#define QCMEASUREMENT_ENABLE_JSONKIT 1
 	```
+![Screenshot - Enable JSONKIT](https://raw.github.com/aprateepQC/SDKIntegrationImages/master/image015.png)
 
 ### SDK Integration ###
 
