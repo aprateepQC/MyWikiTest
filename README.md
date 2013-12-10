@@ -177,7 +177,7 @@ The `labels:` argument of most Quantcast SDK methods is typed to be an `id` poin
 While there is no specific constraint on the intended use of the label dimension, it is not recommended that you use it to indicate discrete events; in these cases, use the `logEvent:withLabels:` method described under [Tracking App Events](#tracking-app-events).
 
 
-#### (optional) Applying Audience Labels Upon App Suspension and Resume ####
+#### Applying Audience Labels Upon App Suspension and Resume ####
 
 If you need more control over how labels are applied when your app is suspended and resumed, you can use the following integration of the Quantcast iOS SDK, which includes a set of 4 required calls to indicate when the app has been launched, paused (put into the background), resumed, and quit.  These 4 calls replace the integration using the `setupMeasurementSessionWithAPIKey` call – they cannot be used concurrently. 
 
