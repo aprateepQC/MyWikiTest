@@ -1,4 +1,3 @@
-
 Quantcast iOS SDK
 =================
 
@@ -41,6 +40,9 @@ git submodule update --init
 ### Set Up Your Xcode Project ###
 
 1.	Import the Quantcast SDK code into your project.  In Xcode, select your project and choose the option “Add Files to <Your Project Name>“, then select the folder where you saved the Quantcast SDK code.
+
+![Screenshot - Add Files to Project](https://raw.github.com/aprateepQC/SDKIntegrationImages/master/image001.png "Add Files to Project")
+
 2.	Link the following iOS frameworks and libraries to your project if they are not already.  From your project properties, go to the “General” section, the scroll down to “Linked Frameworks and Libraries” and hit the “+” at the bottom left.  Then use the Command key to multiselect and add the following:
 	*	`AdSupport`
 	*	`CoreGraphics`
@@ -50,8 +52,13 @@ git submodule update --init
 	*	`libz.dylib`
 	*	`SystemConfiguration`
 	*	`UIKit`
+
+![Screenshot - Add Frameworks and Libraries](https://raw.github.com/aprateepQC/SDKIntegrationImages/master/image003.png)
+
 3.	Make the following iOS framework optional (weak link): 
 	*	`AdSupport`
+
+![Screenshot - Make Linking Optional](https://raw.github.com/aprateepQC/SDKIntegrationImages/master/image005.png)
 
 #### Supporting Automatic Reference Counting (ARC) ####
 
@@ -59,15 +66,22 @@ If your project uses automatic reference counting (ARC), introduced for iOS5, ta
 
 1.	In your project configuration screen, click on the “Build Phases” section, then expand “Compile Sources”.  
 
+![Screenshot - Expand Compile Sources](https://raw.github.com/aprateepQC/SDKIntegrationImages/master/image007.png)
+
 2.	Multi-select every Quantcast source file by holding down the Command button and choosing every filename that begins with “Quantcast”. 
 
+![Screenshot - Multi-select Quantcast Files](https://raw.github.com/aprateepQC/SDKIntegrationImages/master/image009.png)
+
 3.	Hit enter to bring up a text input box, then type in “–fno-obj-arc” and hit enter. 
+
+![Screenshot - Set Compile Flag](https://raw.github.com/aprateepQC/SDKIntegrationImages/master/image011.png)
 
 #### Supporting iOS 4.3-4.6 ####
 
 If you intend to support iOS 4.3 - 4.6, perform these additional steps. Otherwise, skip to the next section.
 
 1.	Import the latest version of JSONKit into your project.  The JSONKit code is available in your Quantcast SDK download, or in the Quantcast github repository under the JSONKit folder.  In Xcode, select your project and choose the option “Add Files to <Your Project Name>“, then select the JSONKit folder.
+
 
 2.	Add the following preprocessor macro definition to your project's precompiled header file (the file that ends with '.pch'):
 
@@ -85,6 +99,8 @@ The recommended way to integrate the Quantcast SDK requires only a single line o
 	#import "QuantcastMeasurement.h"
 	```
 
+![Screenshot - Import Header](https://raw.github.com/aprateepQC/SDKIntegrationImages/master/image017.png)
+
 2.	In your `UIApplication` delegate's `application:didFinishLaunchingWithOptions:` method, place the following:
 
 	```objective-c
@@ -97,6 +113,8 @@ userIdentifier:nil labels:nil];
 	The `userIdentifier:` parameter accepts a string that uniquely identifies an individual user, such as an account login. Passing this information allows Quantcast to provide reports on your combined audience across all your properties: online, mobile web and mobile app. Please see the [Combined Web/App Audiences](#combined-webapp-audiences) section for more information.
 
 	The `labels:` parameter may be nil and is used to create Audience Segments.  Learn more in the [Event Labels](#event-labels) section.
+
+![Screenshot - SetupMeasurement](https://raw.github.com/aprateepQC/SDKIntegrationImages/master/image019.png)
 
 #### (optional) Understanding the API Key ####
 The API key is used as the basic reporting entity for Quantcast Measure. The same API Key can be used across multiple apps (i.e. AppName Free / AppName Paid) and/or app platforms (i.e. iOS / Android). For all apps under each unique API Key, Quantcast will report the aggregate audience among them all, and also identify/report on the individual app versions.
