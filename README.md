@@ -106,11 +106,11 @@ The recommended way to integrate the Quantcast SDK requires only a single line o
 2.	In your `UIApplication` delegate's `application:didFinishLaunchingWithOptions:` method, place the following:
 
 	```objective-c
-	[[QuantcastMeasurement sharedInstance] setupMeasurementSessionWithAPIKey:@"*<Insert your API Key Here>*" 
+	[[QuantcastMeasurement sharedInstance] setupMeasurementSessionWithAPIKey:@"<Insert your API Key Here>" 
 userIdentifier:nil labels:nil];
     ```
 
-	Replace "<\*Insert your API Key Here\*>" with your Quantcast API Key. The API Key can be found in the file “api-key.txt” in your Quantcast SDK folder. All your API keys can also be found on your [Quantcast dashboard here] (https://www.quantcast.com/user/resources?listtype=apps). For more information about how and when to use the API Key, read [Understanding the API Key] (#optional-understanding-the-api-key).
+	Replace "<_Insert your API Key Here_>" with your Quantcast API Key. The API Key can be found in the file “api-key.txt” in your Quantcast SDK folder. All your API keys can also be found on your [Quantcast dashboard here] (https://www.quantcast.com/user/resources?listtype=apps). For more information about how and when to use the API Key, read [Understanding the API Key] (#optional-understanding-the-api-key).
 
 	The `userIdentifier:` parameter accepts a string that uniquely identifies an individual user, such as an account login. Passing this information allows Quantcast to provide reports on your combined audience across all your properties: online, mobile web and mobile app. Please see the [Combined Web/App Audiences](#combined-webapp-audiences) section for more information.
 
@@ -192,11 +192,11 @@ To implement the required set of SDK calls, perform the following steps:
 2.	In your `UIApplication` delegate's `application:didFinishLaunchingWithOptions:` method, place the following:
 
 	```objective-c
-	[[QuantcastMeasurement sharedInstance] beginMeasurementSessionWithAPIKey:@"<*Insert your API Key Here*>" 
+	[[QuantcastMeasurement sharedInstance] beginMeasurementSessionWithAPIKey:@"<Insert your API Key Here>" 
 userIdentifier:nil labels:nil];
     ```
 
-	Replace "<\*Insert your API Key Here\*>" with your Quantcast API Key. The API Key can be found in the file “api-key.txt” in your Quantcast SDK folder. All your API keys can be found on your [Quantcast dashboard here] (https://www.quantcast.com/user/resources?listtype=apps). 
+	Replace "<_Insert your API Key Here_>" with your Quantcast API Key. The API Key can be found in the file “api-key.txt” in your Quantcast SDK folder. All your API keys can also be found on your [Quantcast dashboard here] (https://www.quantcast.com/user/resources?listtype=apps). 
 
 	The `userIdentifier:` parameter accepts a string that uniquely identifies an individual user, such as an account login. Passing this information allows Quantcast to provide reports on your combined audience across all your properties: online, mobile web and mobile app. Please see the [Combined Web/App Audiences](#combined-webapp-audiences) section for more information.
 
