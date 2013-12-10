@@ -146,7 +146,7 @@ You can give users the option to opt out of Quantcast Measure by providing acces
 		
 The `currentViewController` argument is the current view controller. The SDK needs to know this due to how the iOS SDK presents modal dialogs (see [Apple's documentation](http://developer.apple.com/library/ios/#documentation/uikit/reference/UIViewController_Class/Reference/Reference.html) for `presentViewController:animated:completion:`). The delegate is an optional parameter and is explained in the `QuantcastOptOutDelegate` protocol header.
 	
-Note: when a user opts out of Quantcast Measure, the SDK immediately stops transmitting information to or from the user's device and deletes any cached information that may have retained. Furthermore, when a user opts out of any single app on a device, the action affects all other apps on the device that are integrated with Quantcast Measure the next time they are launched.
+Note: when a user opts out of Quantcast Measure, the SDK immediately stops transmitting information to or from the user's device and deletes any cached information that may have retained. 
 
 ### Optional Code Integrations ###
 
@@ -160,7 +160,7 @@ NSArray *myUserSegmentMembership = @[@“purchaser.ebook”,@”sharer.onFB”];
 [QuantcastMeasurement sharedInstance].appLabels = myUserSegmentMembership; 
 ```
 
-Setting the appLabels property has the effect of passing these labels with every method call of the Quantcast SDK.  At any time however, you can add to the labels you’ve assigned using `appLabels` by setting the labels: argument in your Quantcast method call.  
+Setting the appLabels property has the effect of passing these labels with every method call of the Quantcast SDK.  At any time however, you can temporarily add to the labels you’ve assigned using `appLabels` by setting the labels: argument in your Quantcast method call.  
 
 Here is an example that adds the label “sharer.firstShare” in addition to the labels you’ve already assigned (“sharer.onFB”, “purchaser.ebook”) via the `appLabels` property.  This example uses the `logEvent:withLabels:` method, which you can learn about under [Tracking App Events](#tracking-app-events).
 
@@ -170,14 +170,14 @@ NSString *theEventStr = @”tweeted”;
 [[QuantcastMeasurement sharedInstance] logEvent:theEventStr withLabels:newLabel]; 
 ```
 
-All labels that are set during the course of an app session will register a visit for that app session, but only labels set via the `appLabels` property will persist across sessions. A session is started when an app is launched, or when it is woken from the background after more than 30 minutes. A session is defined as ended when an app is closed or when it is suspended for more than 30 minutes.  In the example above, the session will register a visit on audience segments: “sharer.onFB”, “purchaser.ebook”, and “sharer.firstShare”. If the app is then suspended for more than 30 minutes, then awakened, our servers will record a new app session.  If no additional calls are made to QuantcastMeasurement, only the segments assigned via the `appLabels` property, “sharer.onFB” and “purchaser.ebook”, will register a visit for that session.  
+All labels that are set during the course of an app session will register a visit for that app session, but only labels set via the `appLabels` property will persist across sessions. A session is started when an app is launched, or when it is woken from the background after more than 30 minutes. A session is defined as ended when an app is closed or when a new session starts.  In the example above, the session will register a visit on audience segments: “sharer.onFB”, “purchaser.ebook”, and “sharer.firstShare”. If the app is then suspended for more than 30 minutes, then awakened, our servers will record a new app session.  If no additional calls are made to QuantcastMeasurement, only the segments assigned via the `appLabels` property, “sharer.onFB” and “purchaser.ebook”, will register a visit for that session.  
 
 The `labels:` argument of most Quantcast SDK methods is typed to be an `id` pointer. However, it only accepts either a `NSString` object representing a single label, or a `NSArray` object containing one or more `NSString` objects representing a collection of labels to be applied to the event.
 
 While there is no specific constraint on the intended use of the label dimension, it is not recommended that you use it to indicate discrete events; in these cases, use the `logEvent:withLabels:` method described under [Tracking App Events](#tracking-app-events).
 
 
-#### Applying Audience Labels Upon App Suspension and Resume ####
+#### (optional) Applying Audience Labels Upon App Suspension and Resume ####
 
 If you need more control over how labels are applied when your app is suspended and resumed, you can use the following integration of the Quantcast iOS SDK, which includes a set of 4 required calls to indicate when the app has been launched, paused (put into the background), resumed, and quit.  These 4 calls replace the integration using the `setupMeasurementSessionWithAPIKey` call – they cannot be used concurrently. 
 
@@ -249,7 +249,7 @@ You may also safely change the state of the `geoLocationEnabled` at any point af
 
 Note that you should only enable geo-tracking if your app has some location-aware purpose for the user.
 
-The Quantcast iOS SDK will automatically pause geo-tracking while your app is in the background. This is done for both battery life and privacy considerations.
+The Quantcast iOS SDK will automatically pause geo-tracking while your app is in the background. 
 
 #### Digital Magazines and Periodicals ####
 Quantcast Measure provides measurement features specific to digital magazines and periodicals. These options allow the measurement of specific issues, articles and pages in addition to the general measurement of the app hosting the magazine. In order to take advantage of this measurement, you must at a minimum tag when a particular issue has been opened and closed and when each page in that issue has been viewed (in addition to the basic SDK integration). You may also optionally tag when a particular article has been viewed. For more information, please refer to the documentation in the Periodicals header file which can be found in the SDK source folder at `Optional/QuantcastMeasurement+Periodicals.h`.  
