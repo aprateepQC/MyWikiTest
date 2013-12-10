@@ -160,7 +160,7 @@ NSArray *myUserSegmentMembership = @[@“purchaser.ebook”,@”sharer.onFB”];
 [QuantcastMeasurement sharedInstance].appLabels = myUserSegmentMembership; 
 ```
 
-Setting the appLabels property has the effect of passing these labels with every method call of the Quantcast SDK.  At any time however, you can temporarily add to the labels you’ve assigned using `appLabels` by setting the labels: argument in your Quantcast method call.  
+Setting the appLabels property has the effect of passing these labels with every method call of the Quantcast SDK.  At any time however, you can temporarily add to the labels you’ve assigned using `appLabels` by setting the `labels:` argument in your Quantcast method call.  
 
 Here is an example that adds the label “sharer.firstShare” in addition to the labels you’ve already assigned (“sharer.onFB”, “purchaser.ebook”) via the `appLabels` property.  This example uses the `logEvent:withLabels:` method, which you can learn about under [Tracking App Events](#tracking-app-events).
 
