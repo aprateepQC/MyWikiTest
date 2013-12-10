@@ -114,7 +114,7 @@ userIdentifier:nil labels:nil];
 
 	The `userIdentifier:` parameter accepts a string that uniquely identifies an individual user, such as an account login. Passing this information allows Quantcast to provide reports on your combined audience across all your properties: online, mobile web and mobile app. Please see the [Combined Web/App Audiences](#combined-webapp-audiences) section for more information.
 
-	The `labels:` parameter may be nil and is used to create Audience Segments.  Learn more in the [Event Labels](#event-labels) section.
+	The `labels:` parameter may be nil and is used to create Audience Segments.  Learn more in the [Audience Labels](#audience-labels) section.
 
 	![Screenshot - SetupMeasurement](https://raw.github.com/aprateepQC/SDKIntegrationImages/master/image019.png)
 
@@ -200,7 +200,7 @@ userIdentifier:nil labels:nil];
 
 	The `userIdentifier:` parameter accepts a string that uniquely identifies an individual user, such as an account login. Passing this information allows Quantcast to provide reports on your combined audience across all your properties: online, mobile web and mobile app. Please see the [Combined Web/App Audiences](#combined-webapp-audiences) section for more information.
 
-	The `labels:` parameter may be nil and is used to create Audience Segments.  Learn more in the [Event Labels](#event-labels) section.
+	The `labels:` parameter may be nil and is used to create Audience Segments.  Learn more in the [Audience Labels](#audience-labels) section.
 	
 3.	In your `UIApplication` delegate's `applicationWillTerminate:` method, place the following:
 
