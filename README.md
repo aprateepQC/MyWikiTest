@@ -88,6 +88,7 @@ If you intend to support iOS 4.3 - 4.6, perform these additional steps. Otherwis
 	```objective-c
 	#define QCMEASUREMENT_ENABLE_JSONKIT 1
 	```
+	
 	![Screenshot - Enable JSONKIT](https://raw.github.com/aprateepQC/SDKIntegrationImages/master/image015.png)
 
 ### SDK Integration ###
@@ -154,7 +155,7 @@ Use labels to create Audience Segments, or groups of users that share a common p
 
 There are two ways to assign labels.  The first is via the `appLabels` property.  Set the `appLabels` property to record labels related to user properties.  For example, to assign two labels, “purchaser.ebook” and “sharer.onFB”, you could do this:
 
-```objective-c
+``` objective-c
 NSArray *myUserSegmentMembership = @[@“purchaser.ebook”,@”sharer.onFB”];
 [QuantcastMeasurement sharedInstance].appLabels = myUserSegmentMembership; 
 ```
