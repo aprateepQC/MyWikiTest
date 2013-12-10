@@ -128,7 +128,7 @@ You’re now ready to test your integration.  Build and run your project. Quantc
 Congratulations! Now that you’ve completed basic integration, explore how you can enable powerful features to understand your audience and track usage of your app. 
 
 *	Read about [User Privacy](#user-privacy) disclosure and options.
-*	Learn about Audience Segments, which you implement via [Labels](#event-labels).
+*	Learn about Audience Segments, which you implement via [Labels](#audience-labels).
 *	If you have a web property, get a combined view of your [mobile app and web audiences](#combined-webapp-audiences).
 *	Read about all the additional ways you can use the SDK, including [Geo Location](#geo-location-measurement) and [Digital Magazine](#digital-magazines-and-periodicals) measurement.
 
