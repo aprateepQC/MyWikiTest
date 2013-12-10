@@ -39,7 +39,7 @@ git submodule update --init
 ```
 ### Set Up Your Xcode Project ###
 
-1.	Import the Quantcast SDK code into your project.  In Xcode, select your project and choose the option “Add Files to <Your Project Name>“, then select the folder where you saved the Quantcast SDK code.
+1.	Import the Quantcast SDK code into your project.  In Xcode, select your project and choose the option “Add Files to <Your Project Name>“, then select the Quantcast-iOS-Measurement folder from your download.
 
 	![Screenshot - Add Files to Project](https://raw.github.com/aprateepQC/SDKIntegrationImages/master/image001.png "Add Files to Project")
 
@@ -62,7 +62,7 @@ git submodule update --init
 
 #### Supporting Automatic Reference Counting (ARC) ####
 
-If your project uses automatic reference counting (ARC), introduced for iOS5, take the following steps to set a compiler flag for Quantcast source files. Otherwise, skip to the next section.
+If your project uses automatic reference counting (ARC), take the following steps to set a compiler flag for Quantcast source files. Otherwise, skip to the next section.
 
 1.	In your project configuration screen, click on the “Build Phases” section, then expand “Compile Sources”.  
 
@@ -106,7 +106,7 @@ The recommended way to integrate the Quantcast SDK requires only a single line o
 2.	In your `UIApplication` delegate's `application:didFinishLaunchingWithOptions:` method, place the following:
 
 	```objective-c
-	[[QuantcastMeasurement sharedInstance] setupMeasurementSessionWithAPIKey:@"<*Insert your API Key Here*>" 
+	[[QuantcastMeasurement sharedInstance] setupMeasurementSessionWithAPIKey:@"*<Insert your API Key Here>*" 
 userIdentifier:nil labels:nil];
     ```
 
