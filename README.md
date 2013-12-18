@@ -110,7 +110,7 @@ The recommended way to integrate the Quantcast SDK requires only a single line o
 userIdentifier:nil labels:nil];
     ```
 
-	Replace "<_Insert your API Key Here_>" with your Quantcast API Key. The API Key can be found in the file “api-key.txt” in your Quantcast SDK folder. All your API keys can also be found on your [Quantcast dashboard here] (https://www.quantcast.com/user/resources?listtype=apps). For more information about how and when to use the API Key, read [Understanding the API Key] (#optional-understanding-the-api-key).
+	Replace "<_Insert your API Key Here_>" with your Quantcast API Key. The API Key can be found in the file “api-key.txt” in your Quantcast SDK folder. All your API keys can also be found on your Quantcast dashboard: [https://www.quantcast.com/user/resources?listtype=apps] (https://www.quantcast.com/user/resources?listtype=apps). For more information about how and when to use the API Key, read [Understanding the API Key] (#optional-understanding-the-api-key).
 
 	The `userIdentifier:` parameter accepts a string that uniquely identifies an individual user, such as an account login. Passing this information allows Quantcast to provide reports on your combined audience across all your properties: online, mobile web and mobile app. Please see the [Combined Web/App Audiences](#combined-webapp-audiences) section for more information.
 
@@ -135,7 +135,7 @@ Congratulations! Now that you’ve completed basic integration, explore how you 
 ### User Privacy ###
 
 #### Privacy Notification ####
-Quantcast believes in informing users of how their data is being used.  We recommend that you disclose in your privacy policy that you use Quantcast to understand your audiences. You may link to Quantcast's privacy policy [here](https://www.quantcast.com/privacy).
+Quantcast believes in informing users of how their data is being used.  We recommend that you disclose in your privacy policy that you use Quantcast to understand your audiences. You may link to Quantcast's privacy policy: [https://www.quantcast.com/privacy](https://www.quantcast.com/privacy).
 
 #### User Opt-Out ####
 You can give users the option to opt out of Quantcast Measure by providing access to the Quantcast Measure Opt-Out dialog. This should be accomplished with a button or a table view cell (if your options are based on a grouped table view) in your app's options view with the title "Measurement Options" or "Privacy". When a user taps the button you provide, call the Quantcast’s Opt-Out dialog using the following method:
@@ -151,7 +151,7 @@ Note: when a user opts out of Quantcast Measure, the SDK immediately stops trans
 ### Optional Code Integrations ###
 
 #### Audience Labels ####
-Use labels to create Audience Segments, or groups of users that share a common property or attribute.  For instance, you can create an audience segment of users who purchase in your app.  For each audience segment you create, Quantcast will track membership of the segment over time, and generate an audience report that includes their demographics.  If you have implemented the same audience segments on your website(s), you will see a combined view of your web and app audiences for each audience segment. Learn more about how to use audience segments, including how to create segment hierarchies using the dot notation, [here] (https://www.quantcast.com/help/showcase-your-audience-segments/). 
+Use labels to create Audience Segments, or groups of users that share a common property or attribute.  For instance, you can create an audience segment of users who purchase in your app.  For each audience segment you create, Quantcast will track membership of the segment over time, and generate an audience report that includes their demographics.  If you have implemented the same audience segments on your website(s), you will see a combined view of your web and app audiences for each audience segment. Learn more about how to use audience segments, including how to create segment hierarchies using the dot notation, here: [https://www.quantcast.com/help/showcase-your-audience-segments/] (https://www.quantcast.com/help/showcase-your-audience-segments/). 
 
 There are two ways to assign labels.  The first is via the `appLabels` property.  Set the `appLabels` property to record labels related to user properties.  For example, to assign two labels, “purchaser.ebook” and “sharer.onFB”, you could do this:
 
@@ -196,7 +196,7 @@ To implement the required set of SDK calls, perform the following steps:
 userIdentifier:nil labels:nil];
     ```
 
-	Replace "<_Insert your API Key Here_>" with your Quantcast API Key. The API Key can be found in the file “api-key.txt” in your Quantcast SDK folder. All your API keys can also be found on your [Quantcast dashboard here] (https://www.quantcast.com/user/resources?listtype=apps). 
+	Replace "<_Insert your API Key Here_>" with your Quantcast API Key. The API Key can be found in the file “api-key.txt” in your Quantcast SDK folder. All your API keys can also be found on your Quantcast dashboard: [https://www.quantcast.com/user/resources?listtype=apps] (https://www.quantcast.com/user/resources?listtype=apps). 
 
 	The `userIdentifier:` parameter accepts a string that uniquely identifies an individual user, such as an account login. Passing this information allows Quantcast to provide reports on your combined audience across all your properties: online, mobile web and mobile app. Please see the [Combined Web/App Audiences](#combined-webapp-audiences) section for more information.
 
